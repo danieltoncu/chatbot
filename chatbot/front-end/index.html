@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<title>Jarvis</title>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#top">I'm Jarvis</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#top" id="home-btn">Home</a></li>
+				<li><a href="#bot_zone">Talk to me</a></li>
+				<li><a href="#about_me">About me</a></li>
+				<li><a href="https://trello.com/b/d11Tf4Pm/ai-project">Progress</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container-fluid top-bg" id="top">	
+		<div class="jumbotron top-title text-center">
+			<h1 >Hello, I'm Jarvis</h1> 
+			<h3>Don't get fooled, I'm just an AI</h3> 
+			<button id="bot_starter">Let's have a chat</button>
+		</div>		
+	</div>
+
+	<div class="container-fluid triple-zone text-center">	
+		<div class="col-md-4">
+			<div class="zone-container">
+				<img src="images/learning_icon.png">
+				<h3>Our bot is thinking...</h3>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="zone-container">
+				<img src="images/ai_icon.png">
+				<h3>Artifical Intelligence</h3>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="zone-container">
+				<img src="images/team_icon.png">
+				<h3>We are just students</h3>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+			</div>
+		</div>
+	</div>
+
+	<div id="bot_zone" class="container-fluid">
+		<div class="jumbotron bot-title text-center">
+			<h1 >Heya, Jarvis's here</h1> 
+			<h3>Tell me something nice</h3> 
+		</div>
+		<div class="bot-core">
+			<textarea class="history-zone"></textarea>
+
+			<form class="bot-form">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Ask anything...">
+					<span class="input-group-btn">
+						<button class="btn btn-secondary" type="button">Tell Jarvis!</button>
+					</span>
+				</div>
+			</form>
+		</div>
+		
+	</div>
+
+	<div id="about_me">
+		<div class="jumbotron bot-title text-center">
+			<h1 >About me</h1> 
+			<h3>Let me introduce myself</h3> 
+		</div>
+		<div class="container">
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
+		</div>
+	</div>
+
+	<div id="contact">
+		<div class="jumbotron bot-title text-center">
+			<h1 >Contact</h1> 
+			<h3>Do you want to help?</h3> 
+		</div>
+		<div class="container">
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(){			
+			$('nav a').on('click', function(e) {
+				e.preventDefault();
+				myLink = $(this).attr("href")
+				$('html, body').animate({ scrollTop: $(myLink).offset().top}, 500, 'linear');
+
+			});
+
+
+
+			$('nav li').on('click', function(e){
+				$('nav li').removeClass('active');
+				$(this).addClass('active');
+			})
+
+			$('#bot_starter').on('click', function(e){
+				$('html, body').animate({ scrollTop: $('#bot_zone').offset().top}, 500, 'linear');
+			});
+		});		
+	</script>
+
+</body>
+</html>
