@@ -10,6 +10,7 @@
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="static/style/style.css">
+	<script src="static/javascript/question-answer.js"></script>
 	<title>Jarvis</title>
 </head>
 <body>
@@ -67,13 +68,13 @@
 			<h3>Tell me something nice</h3> 
 		</div>
 		<div class="bot-core">
-			<textarea class="history-zone"></textarea>
+			<textarea class="history-zone" id="conversation-history"></textarea>
 
 			<form class="bot-form">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Ask anything...">
+					<input type="text" id="question" class="form-control" placeholder="Ask anything...">
 					<span class="input-group-btn">
-						<button class="btn btn-secondary" type="button">Tell Jarvis!</button>
+						<button class="btn btn-secondary" type="button" onclick="getAnswer()">Tell Jarvis!</button>
 					</span>
 				</div>
 			</form>
