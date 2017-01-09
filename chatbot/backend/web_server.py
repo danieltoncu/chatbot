@@ -5,8 +5,8 @@ import cherrypy
 
 class ChatbotWebServer(object):
 
-	def __init__(self):
-		self._chatbot = None
+	def __init__(self, chatbot):
+		self._chatbot = chatbot
 
 	@cherrypy.expose
 	def index(self):
@@ -14,4 +14,4 @@ class ChatbotWebServer(object):
 
 	@cherrypy.expose
 	def get_answer(self, question):
-		return "Unimplemented."
+		return self._chatbot.get_answer(question)

@@ -5,10 +5,14 @@ import cherrypy
 from backend.web_server import ChatbotWebServer
 import config
 
+from core.chatbot import Chatbot
+
 
 def main():
 
-	cherrypy.quickstart(ChatbotWebServer(), '/', config.conf)
+	chatbot = Chatbot("Jarvis")
+
+	cherrypy.quickstart(ChatbotWebServer(chatbot), '/', config.conf)
 
 
 if __name__ == "__main__":
