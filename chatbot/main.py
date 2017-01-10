@@ -12,7 +12,7 @@ def main():
 
 	chatbot = Chatbot("Jarvis")
 
-	cherrypy.quickstart(ChatbotWebServer(chatbot), '/', config.conf)
+	cherrypy.quickstart(ChatbotWebServer(config.WEB_PAGES_BASEDIR, chatbot), '/', config.conf)
 
 
 if __name__ == "__main__":
