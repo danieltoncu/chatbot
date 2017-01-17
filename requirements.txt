@@ -1,1 +1,6 @@
 cherrypy>=8.7.0
+nltk
+pyenchant
+aiml
+wikipedia
+pandas
