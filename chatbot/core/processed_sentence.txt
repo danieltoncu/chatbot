@@ -1,0 +1,51 @@
+{
+    "antonyms": {
+        "is": [
+            "differ"
+        ]
+    }, 
+    "entities": {
+        "Paris": "NNP", 
+        "is": "VBZ", 
+        "Where": "WRB"
+    }, 
+    "tagged": [
+        [
+            "Where", 
+            "WRB"
+        ], 
+        [
+            "is", 
+            "VBZ"
+        ], 
+        [
+            "Paris", 
+            "NNP"
+        ]
+    ], 
+    "synonyms": {
+        "Paris": [
+            "City_of_Light", 
+            "French_capital", 
+            "capital_of_France", 
+            "genus_Paris"
+        ], 
+        "is": [
+            "be", 
+            "exist", 
+            "equal", 
+            "constitute", 
+            "represent", 
+            "make_up", 
+            "comprise", 
+            "follow", 
+            "embody", 
+            "personify", 
+            "live", 
+            "cost"
+        ]
+    }, 
+    "sentences": [
+        "Where is Paris"
+    ]
+}
