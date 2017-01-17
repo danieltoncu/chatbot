@@ -68,16 +68,20 @@
 			<h3>Tell me something nice</h3> 
 		</div>
 		<div class="bot-core">
-			<textarea class="history-zone" id="conversation-history"></textarea>
+			<div class="history-zone" id="conversation-history"></div>
 
-			<form class="bot-form">
+			<form class="bot-form" method="GET">
 				<div class="input-group">
-					<input type="text" id="question" class="form-control" placeholder="Ask anything...">
+					<input name="question" type="text" id="question" class="form-control" placeholder="Ask anything...">
 					<span class="input-group-btn">
-						<button class="btn btn-secondary" type="button" onclick="getAnswer()">Tell Jarvis!</button>
+						<!-- <button class="btn btn-secondary" type="button" onclick="getAnswer()">Tell Jarvis!</button> -->
+						<input class="btn btn-secondary" type="submit" value="Tell Jarvis!"></input>
 					</span>
 				</div>
 			</form>
+			<div class="alert alert-info q-info">
+				<strong>Info!</strong> Tell something nice to Jarvis ^^
+			</div>
 		</div>
 		
 	</div>
@@ -103,6 +107,7 @@
 	</div>
 
 	<script>
+		historyHeight = 0
 		$(document).ready(function(){			
 			$('nav a').on('click', function(e) {
 				e.preventDefault();
@@ -110,8 +115,6 @@
 				$('html, body').animate({ scrollTop: $(myLink).offset().top}, 500, 'linear');
 
 			});
-
-
 
 			$('nav li').on('click', function(e){
 				$('nav li').removeClass('active');
@@ -121,7 +124,38 @@
 			$('#bot_starter').on('click', function(e){
 				$('html, body').animate({ scrollTop: $('#bot_zone').offset().top}, 500, 'linear');
 			});
+
+			$('.bot-form').on('submit', function(e){
+				e.preventDefault();
+				myQuestion = $('#question').val();
+				$('#question').val('')
+				if(myQuestion != ''){
+					$('.q-info').fadeOut();
+					addConversationElement('Jarvis', myQuestion)
+				}else{
+					$('.q-info').fadeIn();
+				}
+				
+
+				
+			})
 		});		
+
+		function addConversationElement(subject, content){
+			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+			var dt = new Date();
+			var time = days[dt.getDay()] + ' ' + dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+			divObj = '<div class="con-body"><p><strong class="con-subject">' + subject + ' : </strong> ' + content + '</p><p class="con-date">' + time + '</p></div>'
+
+			newElement = $('.history-zone').add(divObj)[1]
+			$(newElement).hide()
+			$('.history-zone').append(newElement);
+			$(newElement).slideDown(200, function(){
+				historyHeight += $(newElement).height();
+				$('.history-zone').animate({scrollTop: historyHeight}, 800);
+			});
+		}
+
 	</script>
 
 </body>

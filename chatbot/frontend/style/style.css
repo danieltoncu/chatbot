@@ -146,12 +146,46 @@ body, html{
 #about_me{
 	background-image: url('../images/about_me_bkg.jpg');
 }
+
 #contact{
 	background-image: url('../images/contact_bkg.jpg');
 }
 
-
 #about_me p, #contact p{
 	font-size: 18px;
 	color: rgba(255,255,255,.6);
+}
+
+.history-zone{
+	height: 350px;
+	margin-bottom: 10px;
+
+	background-color: #9f9f9f;
+
+	overflow-y: scroll;
+}
+
+.con-body{
+	font-size: 13px;
+	background-color: #e2e2e2;
+	overflow: hidden;
+	border-bottom: 1px #9f9f9f solid;
+
+	padding: 6px 0 0 10px;
+}
+
+.con-body p{
+	margin: 0;
+}
+
+.con-date{
+	color:red;
+	font-size: 10px;
+	font-style: italic;
+	padding: 2px 0 3px 15px;
+}
+
+.q-info{
+	display: none;
+	margin-top: 15px;
 }
