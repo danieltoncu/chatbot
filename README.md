@@ -1,15 +1,13 @@
 # chatbot
 [uaic] [fii] [a3] [ai] chatbot
 
-# HowTo Guide (Windows):
+# HowTo Guide (Linux):
 
 ## Requirements:
 
-> __Git Bash / Powershell / ...__
-
 > __Git__
 
-> __Python 3.x, Pip__
+> __Python 2.7, Pip__
 
 > __virtualenv__ ([how to install?](http://docs.python-guide.org/en/latest/dev/virtualenvs/))
 
@@ -19,16 +17,16 @@
 git clone https://github.com/danieltoncu/chatbot
 ```
 
-### 2. Create a virtual environment for Python 3:
+### 2. Create a virtual environment for Python:
 ```bash
 cd chatbot
-virtualenv -p <path-to-python3-executable> .venv
+virtualenv -p /usr/bin/python2.7 .venv
 ```
 > Note: More information about virtual environments you can find [here](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
 ### 3. Once a virtual environment was created, you should activate it:
 ```bash
-source .venv/Scripts/activate
+source .venv/bin/activate
 ```
 
 ### 4. Install project requirements:
@@ -38,7 +36,7 @@ pip install -r requirements.txt
 
 ### 5. Now you can start the application:
 ```bash
-python chatbot/main.py
+python chatbot/main.py [--multiple-answers]
 ```
 
 
