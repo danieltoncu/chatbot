@@ -131,7 +131,14 @@
 				$('#question').val('')
 				if(myQuestion != ''){
 					$('.q-info').fadeOut();
-					addConversationElement('Jarvis', myQuestion)
+					addConversationElement('You', myQuestion, function(){
+						$.ajax({
+							url: "http://localhost:8080/get_answer?question=" + myQuestion,
+							success: function(result){
+						        addConversationElement('Jarvis', result, function(){});
+						    }
+						});
+					});
 				}else{
 					$('.q-info').fadeIn();
 				}
@@ -141,11 +148,16 @@
 			})
 		});		
 
-		function addConversationElement(subject, content){
+		function addConversationElement(subject, content, my_func){
+			if(subject == 'Jarvis'){
+				finalContent = '<span class="do-italic">' + content + '</span>';
+			}else{
+				finalContent = content;
+			}
 			var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 			var dt = new Date();
 			var time = days[dt.getDay()] + ' ' + dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-			divObj = '<div class="con-body"><p><strong class="con-subject">' + subject + ' : </strong> ' + content + '</p><p class="con-date">' + time + '</p></div>'
+			divObj = '<div class="con-body"><p><strong class="con-subject">' + subject + ' : </strong> ' + finalContent + '</p><p class="con-date">' + time + '</p></div>'
 
 			newElement = $('.history-zone').add(divObj)[1]
 			$(newElement).hide()
@@ -153,6 +165,7 @@
 			$(newElement).slideDown(200, function(){
 				historyHeight += $(newElement).height();
 				$('.history-zone').animate({scrollTop: historyHeight}, 800);
+				my_func();
 			});
 		}
 
