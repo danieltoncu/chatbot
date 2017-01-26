@@ -49,7 +49,7 @@ body, html{
 }
 
 .triple-zone .zone-container{
-	height: auto;
+	min-height: 350px;
 	background-color: #b5b5b5;
 
 	padding: 20px;
@@ -192,4 +192,26 @@ body, html{
 
 .do-italic{
 	font-style: italic;
+}
+
+.mic-trigger{
+	width: 50px;
+
+	background-image: url('../images/mic-icon.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	background-size: 70%;
+	border-left: 1px solid black;
+}
+
+.input-group-btn *:hover{
+	background-color: #a2a2a2;
+}
+
+.question-here{
+	color: red;
+	font-style: italic;
+	font-size: 18px;
 }

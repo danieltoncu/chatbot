@@ -11,6 +11,14 @@
   crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="static/style/style.css">
 	<script src="static/javascript/question-answer.js"></script>
+	
+	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	<script
+  src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 	<title>Jarvis</title>
 </head>
 <body>
@@ -24,7 +32,7 @@
 				<li class="active"><a href="#top" id="home-btn">Home</a></li>
 				<li><a href="#bot_zone">Talk to me</a></li>
 				<li><a href="#about_me">About me</a></li>
-				<li><a href="https://trello.com/b/d11Tf4Pm/ai-project">Progress</a></li>
+<!-- 				<li><a href="https://trello.com/b/d11Tf4Pm/ai-project">Progress</a></li> -->
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</div>
@@ -35,7 +43,7 @@
 			<h1 >Hello, I'm Jarvis</h1> 
 			<h3>Don't get fooled, I'm just an AI</h3> 
 			<button id="bot_starter">Let's have a chat</button>
-		</div>		
+		</div>	
 	</div>
 
 	<div class="container-fluid triple-zone text-center">	
@@ -43,21 +51,21 @@
 			<div class="zone-container">
 				<img src="static/images/learning_icon.png">
 				<h3>Our bot is thinking...</h3>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+				<p>Our bot doesn't just give you a random answer that's hopefully from the same domain as the question, but does take into account the context of the question given</p>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="zone-container">
 				<img src="static/images/ai_icon.png">
 				<h3>Artifical Intelligence</h3>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+				<p>This bot is powered / boosted by artificial intelligence, with technologies such as NLTK, AIML 2.0, neural networks, machine learning etc, all integrated nicely within a Django Server</p>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="zone-container">
 				<img src="static/images/team_icon.png">
 				<h3>We are just students</h3>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+				<p>We're a bunch of undergraduate students in our final year at the Faculty of Computer Science, trying to fulfill a project's demands / requirements. This is the result. This is nearly half of what we had in mind to achieve so bear with us, please.</p>
 			</div>
 		</div>
 	</div>
@@ -70,18 +78,39 @@
 		<div class="bot-core">
 			<div class="history-zone" id="conversation-history"></div>
 
-			<form class="bot-form" method="GET">
+			<form class="bot-form">
 				<div class="input-group">
 					<input name="question" type="text" id="question" class="form-control" placeholder="Ask anything...">
 					<span class="input-group-btn">
-						<!-- <button class="btn btn-secondary" type="button" onclick="getAnswer()">Tell Jarvis!</button> -->
-						<input class="btn btn-secondary" type="submit" value="Tell Jarvis!"></input>
+						<input class="btn btn-secondary" type="submit" value="Tell Jarvis!">
+						<button type="button" class="btn mic-trigger" data-toggle="modal" data-target="#myModal"></button>
 					</span>
 				</div>
 			</form>
 			<div class="alert alert-info q-info">
 				<strong>Info!</strong> Tell something nice to Jarvis ^^
 			</div>
+		</div>
+
+  <!-- Modal -->
+		  <div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog modal-md">
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">Speak to Jarvis...</h4>
+		        </div>
+		        <div class="modal-body">
+		          
+		        	<span class="text-center"> Your question: </span><span class="question-here"></span>
+
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default mic-stop" data-dismiss="modal">Close</button>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
 		</div>
 		
 	</div>
@@ -92,7 +121,10 @@
 			<h3>Let me introduce myself</h3> 
 		</div>
 		<div class="container">
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
+			<p>Hi, I'm JARVIS ,
+I'm an intelligent chatterbot, having a relatively huge knowledge base and I can answer many questions from different fields.
+I was created by a group of computer science students and I'm very excited to help you.
+I hope you're going to enjoy your experience using me. </p>
 		</div>
 	</div>
 
@@ -102,18 +134,24 @@
 			<h3>Do you want to help?</h3> 
 		</div>
 		<div class="container">
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.</p>
+			<p>If you need help or want to find out more about anything related to our project, 
+please contact
+• Our course teacher, Prof., PhD Cristea Dan
+	→ dcristea@info.uaic.ro
+• Our (project) assistant teacher, Lecturer, PhD Raschip (Ionita) Madalina
+	→ mionita@info.uaic.ro</p>
 		</div>
 	</div>
+	<script type="text/javascript" src="static/javascript/speech-to-text.js"></script>
 
 	<script>
-		historyHeight = 0
-		$(document).ready(function(){			
+		historyHeight = 0;
+		// micEvent = False;
+		$(document).ready(function(){		
 			$('nav a').on('click', function(e) {
 				e.preventDefault();
 				myLink = $(this).attr("href")
-				$('html, body').animate({ scrollTop: $(myLink).offset().top}, 500, 'linear');
-
+				$('html, body').animate({ scrollTop: $(myLink).offset().top}, 800, 'easeInOutCubic');
 			});
 
 			$('nav li').on('click', function(e){
@@ -122,31 +160,32 @@
 			})
 
 			$('#bot_starter').on('click', function(e){
-				$('html, body').animate({ scrollTop: $('#bot_zone').offset().top}, 500, 'linear');
-			});
+				$('html, body').animate({ scrollTop: $('#bot_zone').offset().top}, 800, 'easeInOutCubic');
+			});		
 
-			$('.bot-form').on('submit', function(e){
+			$('.bot-form').submit(function(e){
 				e.preventDefault();
+				e.stopPropagation();
+
+
 				myQuestion = $('#question').val();
-				$('#question').val('')
+				$('#question').val('');
 				if(myQuestion != ''){
 					$('.q-info').fadeOut();
 					addConversationElement('You', myQuestion, function(){
 						$.ajax({
 							url: "http://localhost:8080/get_answer?question=" + myQuestion,
 							success: function(result){
+								responsiveVoice.speak(result);
 						        addConversationElement('Jarvis', result, function(){});
 						    }
 						});
 					});
 				}else{
 					$('.q-info').fadeIn();
-				}
-				
-
-				
-			})
-		});		
+				}								
+			});
+		
 
 		function addConversationElement(subject, content, my_func){
 			if(subject == 'Jarvis'){
@@ -169,7 +208,11 @@
 			});
 		}
 
+
+	});
+
 	</script>
+	
 
 </body>
 </html>

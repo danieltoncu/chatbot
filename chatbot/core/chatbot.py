@@ -34,7 +34,7 @@ class Chatbot(object):
         if "WP" in entities.values():
             search_words = ""
             for k, v in entities.iteritems():
-                if v == "NNP":
+                if v.startswith('NN'):
                     search_words += k + " "
 
             possible_answers["Wikipedia"] = wikipedia_search(search_words[:-1])
